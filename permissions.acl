@@ -3,35 +3,35 @@
 */ 
 rule DoctorCanReadPatient{
 	description: "Allow doctor read access to all granted patients"
-    participant(p): "org.acme.biznet.Doctor"
+    participant(p): "org.example.sample.Doctor"
     operation: READ
-    resource(r): "org.acme.biznet.Patient"
+    resource(r): "org.example.sample.Patient"
     condition: (r.authorized && r.authorized.indexOf(r.getIdentifier())>-1) 
   	action: ALLOW
 }
 rule DoctorCanUpdateEHR{
 	description: "Allow doctor update access to all granted patients"
-    participant(p): "org.acme.biznet.Doctor"
+    participant(p): "org.example.sample.Doctor"
     operation: CREATE,UPDATE
-    resource(r): "org.acme.biznet.Patient"
-  	transaction(tx):"org.acme.biznet.UpdateRecord"
+    resource(r): "org.example.sample.Patient"
+  	transaction(tx):"org.example.sample.UpdateRecord"
     condition: (r.authorized && r.authorized.indexOf(p.getIdentifier())>-1) 
   	action: ALLOW
 }
 /*rule PatientCanReadEHR{
 	description: "Allow patient read access to his/her own records"
-    participant(p): "org.acme.biznet.Patient"
+    participant(p): "org.example.sample.Patient"
     operation: READ
-    resource(r): "org.acme.biznet.Medical_Record"
+    resource(r): "org.example.sample.Medical_Record"
     condition: (p.PatientId == r.PatientId) 
   	action: ALLOW
 }
 */
 rule DoctorCanReadEHR{
 	description: "Allow doctor read access to all of the medical records associated with him"
-    participant(p): "org.acme.biznet.Doctor"
+    participant(p): "org.example.sample.Doctor"
     operation: READ
-    resource(r): "org.acme.biznet.Medical_Record"
+    resource(r): "org.example.sample.Medical_Record"
     condition: (p.DoctorID == r.DoctorId)
   	action: ALLOW
 }

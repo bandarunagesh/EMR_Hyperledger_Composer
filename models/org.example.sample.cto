@@ -1,6 +1,4 @@
- // EHR model
- 
-namespace org.acme.biznet
+namespace org.example.sample
 
 asset Patient_profile  identified by profile_id{
     o String profile_id
@@ -80,5 +78,3 @@ concept Address {
   o String country
   o String PinCode
 }
-
-

@@ -112,7 +112,7 @@
  		    success: function (response){
  		    	if(response!=null){
 					alert("Record Create with record_id: "+ record_id); 
-					window.location="http://localhost:8080/MedicalEHR/CreateMedicalRecord.html";
+					window.location="http://localhost:8080/CreateMedicalRecord.html";
  		    	}
  		    	else{
  		    		alert("Ask the patient first to give you the write permission"); 		    		
@@ -128,7 +128,7 @@
    
    function signout(){
 		localStorage.clear();
-		window.location="http://localhost:8080/MedicalEHR/loginA.html";
+		window.location="http://localhost:8080/login.html";
    	return false;
 	}
    </script>

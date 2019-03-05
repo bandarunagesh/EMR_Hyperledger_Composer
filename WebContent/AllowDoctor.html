@@ -59,7 +59,7 @@
  		    
  		    success: function (response){
 				alert("Access Given"); 
-				window.location="http://localhost:8080/MedicalEHR/AllowDoctor.html";
+				window.location="http://localhost:8080/AllowDoctor.html";
  		    },
  		    error: function (request, status, error) {
  				alert(error.message);
@@ -71,7 +71,7 @@
    
    function signout(){
 		localStorage.clear();
-		window.location="http://localhost:8080/MedicalEHR/loginA.html";
+		window.location="http://localhost:8080/login.html";
    	return false;
 	}
    </script>

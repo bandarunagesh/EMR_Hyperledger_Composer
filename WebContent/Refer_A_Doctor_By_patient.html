@@ -66,7 +66,7 @@
  		    async: false,
  		    success: function (response){
 				alert("Doctor Referred"); 
-				window.location="http://localhost:8080/MedicalEHR/Refer_A_Doctor_By_patient.html";
+				window.location="http://localhost:8080/Refer_A_Doctor_By_patient.html";
  		    },
  		    error: function (request, status, error) {
  				alert("Sorry !! You are not authorized to give access for this record");
@@ -78,7 +78,7 @@
    
    function signout(){
 		localStorage.clear();
-		window.location="http://localhost:8080/MedicalEHR/loginA.html";
+		window.location="http://localhost:8080/login.html";
    	return false;
 	}
    </script>
