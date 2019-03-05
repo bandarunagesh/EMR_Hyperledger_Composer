@@ -104,7 +104,7 @@
  		//alert(myJson);
  		$.ajax({
  		    type : 'POST',
- 		    url: 'http://localhost:3000/api/UpdateRecord',
+ 		    url: 'http://34.73.217.20:3000/api/UpdateRecord',
  		    data : myJson,
  		    contentType: 'application/json',
  		    async: false,
@@ -112,7 +112,7 @@
  		    success: function (response){
  		    	if(response!=null){
 					alert("Record Create with record_id: "+ record_id); 
-					window.location="http://localhost:8080/CreateMedicalRecord.html";
+					window.location="http://34.73.217.20:8080/CreateMedicalRecord.html";
  		    	}
  		    	else{
  		    		alert("Ask the patient first to give you the write permission"); 		    		
@@ -128,7 +128,7 @@
    
    function signout(){
 		localStorage.clear();
-		window.location="http://localhost:8080/login.html";
+		window.location="http://34.73.217.20:8080/login.html";
    	return false;
 	}
    </script>

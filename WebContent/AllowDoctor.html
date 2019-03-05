@@ -52,14 +52,14 @@
  		//alert(myJson);
  		$.ajax({
  		    type : 'POST',
- 		    url: 'http://localhost:3000/api/AllowAdoctorWrite',
+ 		    url: 'http://34.73.217.20:3000/api/AllowAdoctorWrite',
  		    data : myJson,
  		    contentType: 'application/json',
  		    async: false,
  		    
  		    success: function (response){
 				alert("Access Given"); 
-				window.location="http://localhost:8080/AllowDoctor.html";
+				window.location="http://34.73.217.20:8080/AllowDoctor.html";
  		    },
  		    error: function (request, status, error) {
  				alert(error.message);
@@ -71,7 +71,7 @@
    
    function signout(){
 		localStorage.clear();
-		window.location="http://localhost:8080/login.html";
+		window.location="http://34.73.217.20:8080/login.html";
    	return false;
 	}
    </script>

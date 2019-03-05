@@ -60,14 +60,14 @@
  		//alert(myJson);
  		$.ajax({
  		    type : 'POST',
- 		    url: 'http://localhost:3000/api/AllowOtherDoctorsRead',
+ 		    url: 'http://34.73.217.20:3000/api/AllowOtherDoctorsRead',
  		    data : myJson,
  		    contentType: 'application/json',
  		    async: false,
  		    
  		    success: function (response){
 				alert("Doctor Referred"); 
-				window.location="http://localhost:8080/Refer_a_Doctor.html";
+				window.location="http://34.73.217.20:8080/Refer_a_Doctor.html";
  		    },
  		    error: function (request, status, error) {
  				alert("Sorry !! You are not authorized to give access for this record");
@@ -79,7 +79,7 @@
    
    function signout(){
 		localStorage.clear();
-		window.location="http://localhost:8080/login.html";
+		window.location="http://34.73.217.20:8080/login.html";
    	return false;
 	}
    </script>

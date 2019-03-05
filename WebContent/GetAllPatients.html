@@ -44,7 +44,7 @@ var age;
 
 $.ajax({
     type : 'GET',
-    url: 'http://localhost:3000/api/queries/selectMedicalRecordByDoctorId?DoctorId='+ localStorage.doctor_id,
+    url: 'http://34.73.217.20:3000/api/queries/selectMedicalRecordByDoctorId?DoctorId='+ localStorage.doctor_id,
     dataType: 'json',
     async: false,
     
@@ -86,7 +86,7 @@ $.ajax({
 function patient_details(){
 	$.ajax({
 	    type : 'GET',
-	    url: 'http://localhost:3000/api/Patient/'+pid,
+	    url: 'http://34.73.217.20:3000/api/Patient/'+pid,
 	    dataType: 'json',
 	    async: false,
 	    
@@ -106,7 +106,7 @@ function patient_details(){
 
 function signout(){
 	localStorage.clear();
-	window.location="http://localhost:8080/login.html";
+	window.location="http://34.73.217.20:8080/login.html";
 	return false;
 }
 
