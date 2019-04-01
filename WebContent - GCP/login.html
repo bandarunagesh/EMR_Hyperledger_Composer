@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Bootstrap Example</title>
+    <title>EMRChain.us</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -63,15 +63,16 @@
  		}
  		else if((uid=="1" || uid=="2" ||  uid=="3" || uid=="4" )&& pwd=="1234" && type=="Doctor"){
  			 localStorage.doctor_id=uid;
- 			 window.location="http://localhost:8080/Doctor_main.html";	
+        
+ 			 window.location="http://storage.googleapis.com/emrapp/Doctor_main.html";	
  		}
  		else if((uid=="1" || uid=="2" ||  uid=="3" || uid=="4" )&& pwd=="1234" && type=="Patient"){
  			 localStorage.patient_id=uid;
- 			 window.location="http://localhost:8080/Patient_Main.html";	
+ 			 window.location="http://storage.googleapis.com/emrapp/Patient_Main.html";	
  		}
  		else if((uid=="1" || uid=="2" ||  uid=="3" || uid=="4" )&& pwd=="1234" && type=="Researcher"){
 			 //localStorage.re_id=uid;
-			 window.location="http://localhost:8080/Researcher_Data.html";	
+			 window.location="http://storage.googleapis.com/emrapp/Researcher_Data.html";	
 		}
  		else{
  			alert("Wrong Credentials");

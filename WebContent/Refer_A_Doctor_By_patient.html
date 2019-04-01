@@ -11,7 +11,7 @@
  <body>
    <div class="container-fluid">
      <div style="height:100px;background-color:black">
-       <h2 style="text-align:center;color:yellow"><b>Medical<span style="color:GREEN">EHR</span></b></h2>
+       <h2 style="text-align:center;color:yellow"><b>EMR<span style="color:GREEN">Chain</span></b></h2>
        <h3 style="text-align:right"><a href="#" onclick="signout()">SignOut</a>></h3>
      </div>
      <div style="text-align:center">
@@ -47,9 +47,9 @@
    </div>
   <script>
    $('#login').click(function(){
-     	var doctor2="resource:org.acme.biznet.Doctor#"+$('#doc').val()+"";
-     	var record="resource:org.acme.biznet.Medical_Record#"+$('#rec').val()+"";
- 		var class1= "org.acme.biznet.AllowOtherDoctorsRead";
+     	var doctor2="resource:org.example.sample.Doctor#"+$('#doc').val()+"";
+     	var record="resource:org.example.sample.Medical_Record#"+$('#rec').val()+"";
+ 		var class1= "org.example.sample.AllowOtherDoctorsRead";
  		var doctorId=""+localStorage.patient_id;
  		var myObj = {     "$class" : class1, 
  						  "id": doctorId,
@@ -60,13 +60,13 @@
  		//alert(myJson);
  		$.ajax({
  		    type : 'POST',
- 		    url: 'http://34.73.217.20:3000/api/AllowOtherDoctorsRead',
+ 		    url: 'http://35.211.219.177:3000/api/org.example.sample.AllowOtherDoctorsRead',
  		    data : myJson,
  		    contentType: 'application/json',
  		    async: false,
  		    success: function (response){
 				alert("Doctor Referred"); 
-				window.location="http://34.73.217.20:8080/Refer_A_Doctor_By_patient.html";
+				window.location="http://localhost:8080/Refer_A_Doctor_By_patient.html";
  		    },
  		    error: function (request, status, error) {
  				alert("Sorry !! You are not authorized to give access for this record");
@@ -78,7 +78,7 @@
    
    function signout(){
 		localStorage.clear();
-		window.location="http://34.73.217.20:8080/login.html";
+		window.location="http://localhost:8080/login.html";
    	return false;
 	}
    </script>

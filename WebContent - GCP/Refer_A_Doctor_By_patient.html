@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Bootstrap Example</title>
+    <title>EMRChain.us</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -12,7 +12,7 @@
    <div class="container-fluid">
      <div style="height:100px;background-color:black">
        <h2 style="text-align:center;color:yellow"><b>EMR<span style="color:GREEN">Chain</span></b></h2>
-       <h3 style="text-align:right"><a href="#" onclick="signout()">SignOut</a></h3>
+       <h3 style="text-align:right"><a href="#" onclick="signout()">SignOut</a>></h3>
      </div>
      <div style="text-align:center">
        <h3 style="color:BLUE"><b>Medical Record</b></h3>
@@ -50,7 +50,7 @@
      	var doctor2="resource:org.example.sample.Doctor#"+$('#doc').val()+"";
      	var record="resource:org.example.sample.Medical_Record#"+$('#rec').val()+"";
  		var class1= "org.example.sample.AllowOtherDoctorsRead";
- 		var doctorId=""+localStorage.doctor_id;
+ 		var doctorId=""+localStorage.patient_id;
  		var myObj = {     "$class" : class1, 
  						  "id": doctorId,
  						  "record" : record,
@@ -60,14 +60,13 @@
  		//alert(myJson);
  		$.ajax({
  		    type : 'POST',
- 		    url: 'http://35.211.219.177:3000/api/org.example.sample.AllowOtherDoctorsRead',
+ 		    url: 'http://35.211.219.177:3000/api/AllowOtherDoctorsRead',
  		    data : myJson,
  		    contentType: 'application/json',
  		    async: false,
- 		    
  		    success: function (response){
 				alert("Doctor Referred"); 
-				window.location="http://localhost:8080/Refer_a_Doctor.html";
+				window.location="http://storage.googleapis.com/emrapp/Refer_A_Doctor_By_patient.html";
  		    },
  		    error: function (request, status, error) {
  				alert("Sorry !! You are not authorized to give access for this record");
@@ -79,7 +78,7 @@
    
    function signout(){
 		localStorage.clear();
-		window.location="http://localhost:8080/login.html";
+		window.location="http://storage.googleapis.com/emrapp/login.html";
    	return false;
 	}
    </script>

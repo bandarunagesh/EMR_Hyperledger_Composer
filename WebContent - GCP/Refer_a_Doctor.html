@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Bootstrap Example</title>
+    <title>EMRChain.us</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -60,14 +60,14 @@
  		//alert(myJson);
  		$.ajax({
  		    type : 'POST',
- 		    url: 'http://35.211.219.177:3000/api/org.example.sample.AllowOtherDoctorsRead',
+ 		    url: 'http://35.211.219.177:3000/api/AllowOtherDoctorsRead',
  		    data : myJson,
  		    contentType: 'application/json',
  		    async: false,
  		    
  		    success: function (response){
 				alert("Doctor Referred"); 
-				window.location="http://localhost:8080/Refer_a_Doctor.html";
+				window.location="http://storage.googleapis.com/emrapp/Refer_a_Doctor.html";
  		    },
  		    error: function (request, status, error) {
  				alert("Sorry !! You are not authorized to give access for this record");
@@ -79,7 +79,7 @@
    
    function signout(){
 		localStorage.clear();
-		window.location="http://localhost:8080/login.html";
+		window.location="http://storage.googleapis.com/emrapp/login.html";
    	return false;
 	}
    </script>

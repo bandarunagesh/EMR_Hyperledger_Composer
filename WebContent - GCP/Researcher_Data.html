@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Bootstrap Example</title>
+    <title>EMRChain.us</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -42,7 +42,7 @@ var age;
 
 $.ajax({
     type : 'GET',
-    url: 'http://35.211.219.177:3000/api/org.example.sample.Medical_Record',
+    url: 'http://35.211.219.177:3000/api/Medical_Record',
     dataType: 'json',
     async: false,
     
@@ -80,7 +80,7 @@ $.ajax({
 function patient_details(){
 	$.ajax({
 	    type : 'GET',
-	    url: 'http://35.211.219.177:3000/api/org.example.sample.Patient/'+pid,
+	    url: 'http://35.211.219.177:3000/api/Patient/'+pid,
 	    dataType: 'json',
 	    async: false,
 	    
@@ -100,7 +100,7 @@ function patient_details(){
 
 function signout(){
 	localStorage.clear();
-	window.location="http://localhost:8080/login.html";
+	window.location="http://storage.googleapis.com/emrapp/login.html";
 	return false;
 }
 

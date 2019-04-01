@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Bootstrap Example</title>
+    <title>EMRChain.us</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -104,7 +104,7 @@
  		//alert(myJson);
  		$.ajax({
  		    type : 'POST',
- 		    url: 'http://35.211.219.177:3000/api/org.example.sample.UpdateRecord',
+ 		    url: 'http://35.211.219.177:3000/api/UpdateRecord',
  		    data : myJson,
  		    contentType: 'application/json',
  		    async: false,
@@ -112,7 +112,7 @@
  		    success: function (response){
  		    	if(response!=null){
 					alert("Record Create with record_id: "+ record_id); 
-					window.location="http://localhost:8080/CreateMedicalRecord.html";
+					window.location="http://storage.googleapis.com/emrapp/CreateMedicalRecord.html";
  		    	}
  		    	else{
  		    		alert("Ask the patient first to give you the write permission"); 		    		
@@ -128,7 +128,7 @@
    
    function signout(){
 		localStorage.clear();
-		window.location="http://localhost:8080/login.html";
+		window.location="http://storage.googleapis.com/emrapp/login.html";
    	return false;
 	}
    </script>
