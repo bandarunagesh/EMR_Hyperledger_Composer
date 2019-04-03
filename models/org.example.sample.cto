@@ -71,6 +71,11 @@ transaction AllowAdoctorWrite{
     o String DoctorId
 }
 
+transaction revokedoctorWrite{
+	--> Patient patient
+    o String DoctorId
+}
+
 concept Address {
   o String number
   o String street
