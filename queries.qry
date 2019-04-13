@@ -31,7 +31,7 @@ query selectMedicalRecordByDoctorId {
    description: "Select the medical records based on the DoctorId"
   statement:
       SELECT org.example.sample.Medical_Record
-          WHERE ((authorized CONTAINS _$DoctorId )OR (DoctorId ==_$DoctorId ))
+          WHERE ((authorized CONTAINS _$DoctorId ))
 } 
 
 query selectMedicalRecordByPatientId {

@@ -12,22 +12,16 @@
    <div class="container-fluid">
      <div style="height:100px;background-color:black">
        <h2 style="text-align:center;color:yellow"><b>EMR<span style="color:GREEN">Chain</span></b></h2>
-       <h3 style="text-align:right"><a href="#" onclick="signout()">SignOut</a></h3>
+       <h3 style="text-align:right"><a href="#" onclick="signout()">SignOut</a>></h3>
      </div>
      <div style="text-align:center">
-       <h3 style="color:BLUE"><b>Medical Record Revoke Access</b></h3>
+       <h3 style="color:BLUE"><b>Revoke Write Access</b></h3>
      </div>
      <div class="row">
        <div class="col-sm-4">
        </div>
        <div class="col-sm-4"style="border-style: solid;border-width: 4px;border-color:#ddd;background-color:#eee">
          <form class="form-horizontal" id="Medicalform">
-         	<div class="form-group">
-             <label class="control-label col-sm-3" >Enter Record to be revoked :</label>
-             <div class="col-sm-9">
-               <input type="text" class="form-control" id="rec" placeholder="Enter RecordId"  value="">
-             </div>
-           </div>	
              <div class="form-group">
              <label class="control-label col-sm-3" >Doctor Id to revoke:</label>
              <div class="col-sm-9">
@@ -47,30 +41,28 @@
    </div>
   <script>
    $('#login').click(function(){
-     	var doctor2="resource:org.example.sample.Doctor#"+$('#doc').val()+"";
-     	var record="resource:org.example.sample.Medical_Record#"+$('#rec').val()+"";
- 		var class1= "org.example.sample.AllowOtherDoctorsRead";
- 		var doctorId=""+localStorage.doctor_id;
+     	var doctor=$('#doc').val()+"";
+ 		var class1= "org.example.sample.AllowAdoctorWrite";
+ 		var patient="org.example.sample.Patient#"+localStorage.patient_id;
  		var myObj = {     "$class" : class1, 
- 						  "id": doctorId,
- 						  "record" : record,
- 						  "doctor2" : doctor2 
+ 						  "patient" : patient,
+ 						  "DoctorId" : doctor 
  						  };
  		var myJson = JSON.stringify(myObj);
  		//alert(myJson);
  		$.ajax({
  		    type : 'POST',
- 		    url: 'http://35.211.219.177:3000/api/revokedoctorWrite',
+ 		    url: 'http://35.211.219.177:3000/api/RevokeDoctorAccess',
  		    data : myJson,
  		    contentType: 'application/json',
  		    async: false,
  		    
  		    success: function (response){
-				alert("Doctor Referred"); 
-				window.location="http://storage.googleapis.com/emrapp/RevokeDoctor.html";
+				alert("Access Given"); 
+				window.location="http://storage.googleapis.com/emrapp/RevokeDoctorAccess.html";
  		    },
  		    error: function (request, status, error) {
- 				alert("Sorry !! You are not authorized to give access for this record");
+ 				alert(error.message);
  		    }
  		});
  		//alert(excelDateString);

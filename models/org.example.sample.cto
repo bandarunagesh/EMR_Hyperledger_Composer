@@ -71,9 +71,17 @@ transaction AllowAdoctorWrite{
     o String DoctorId
 }
 
-transaction revokedoctorWrite{
+transaction RevokeDoctorAccess{
 	--> Patient patient
     o String DoctorId
+}
+
+
+
+transaction revokedoctorWrite{
+  	o String id
+    -->	Medical_Record record
+    -->	Doctor doctor2
 }
 
 concept Address {
