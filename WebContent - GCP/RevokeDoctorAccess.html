@@ -42,7 +42,7 @@
   <script>
    $('#login').click(function(){
      	var doctor=$('#doc').val()+"";
- 		var class1= "org.example.sample.AllowAdoctorWrite";
+ 		var class1= "org.example.sample.RevokeDoctorAccess";
  		var patient="org.example.sample.Patient#"+localStorage.patient_id;
  		var myObj = {     "$class" : class1, 
  						  "patient" : patient,
@@ -58,7 +58,7 @@
  		    async: false,
  		    
  		    success: function (response){
-				alert("Access Given"); 
+				alert("Access Revoked"); 
 				window.location="http://storage.googleapis.com/emrapp/RevokeDoctorAccess.html";
  		    },
  		    error: function (request, status, error) {
