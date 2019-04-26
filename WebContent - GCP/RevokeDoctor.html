@@ -49,7 +49,7 @@
    $('#login').click(function(){
      	var doctor2="resource:org.example.sample.Doctor#"+$('#doc').val()+"";
      	var record="resource:org.example.sample.Medical_Record#"+$('#rec').val()+"";
- 		var class1= "org.example.sample.AllowOtherDoctorsRead";
+ 		var class1= "org.example.sample.revokedoctorWrite";
  		var doctorId=""+localStorage.doctor_id;
  		var myObj = {     "$class" : class1, 
  						  "id": doctorId,
